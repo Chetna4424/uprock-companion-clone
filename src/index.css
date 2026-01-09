@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  background-color: #171219; /* pure black */
+  color: #ffffff; /* optional: white text for contrast */
+  overflow-x: hidden; /* prevent horizontal scroll from animations */
+}
+/* src/index.css */
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background-color: #faf9f5; /* same pastel blue for all */
+  opacity: 0.4; /* adjust transparency */
+  pointer-events: none;
+  z-index: 0; /* behind content */
+width: 10px;      /* smaller bubble */
+  height: 10px;     /* smaller bubble */
+  animation-name: float;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* Floating animation */
+@keyframes float {
+  0% {
+    transform: translateY(100vh) translateX(0);
+  }
+  100% {
+    transform: translateY(-10vh) translateX(50px);
+  }
+}
